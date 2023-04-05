@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html >
+<head>
+   
+    <title>MY PAGE</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+    <input type="button" value="Get All Data" onclick="detData()"/>
+    <div id="d1"></div>
+    <script>
+
+        //
+        let promise = new Promise(function (resolve, reject) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "https://jsonplaceholder.typicode.com/todos/");
+            req.onload = function () {
+                // 200 is the http status code -> 200 means receied data/ req is successful
+                if (req.status == 200) {
+                    resolve(req.response);
+                }
+                else {
+                    reject("Error in the application");
+                }
+            };
+            req.send();
+        });
+
+
+        // then function is used to invoke the promise
+        function getData() {
+            promise.then(function (dd) {
+                displayAll(dd);
+            }).catch(function (msg) {
+                console.log(msg);
+            });
+        }
+
+        var data = "<table border='1'><tr><th>User Id</th><th>Id</th><th>Title</th><th>Completed</th></tr>";
+        function displayAll(val) {
+            var list = JSON.parse(val);
+            for (var i = 0; i < list.length; i++) {
+                data += "<tr><td>" + list[i].userId + "</td><td>" + list[i].id + "</td><td>" + list[i].title + "</td><td>" + list[i].completed
+                    + "</td></tr>";
+
+            }
+            data += "</table>";
+            document.getElementById("d1").innerHTML = data;
+        }
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

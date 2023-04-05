@@ -1,0 +1,30 @@
+﻿.nav-link{
+    color:#fd680d;
+    font-weight:500;
+}
+.nav-link:hover{
+    color:green;
+}
+.carousel-inner{
+    height:252px;
+}
+@media only screen and (min-device-width:760px) and (max-device-width:100px0){
+
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:480px0) {
+
+    .nav{
+        font-size: 12px;
+    }
+    .list h3{
+        font-size:16px;
+        top:-76px;
+    }
+    .list .prods{
+        top:-63px;
+    }
+    .card{
+        margin-bottom: 15px;
+    }
+}

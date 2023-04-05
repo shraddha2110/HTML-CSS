@@ -1,0 +1,20 @@
+﻿.div1{
+    background-color:aquamarine;
+    position:relative;
+    height:100px;
+}
+
+.div2{
+    background-color: burlywood;
+}
+
+p{
+    background-color: lightblue;
+    position: relative;
+}
+
+.div3{
+    background-color: yellow;
+    position: sticky;
+    top:0;
+}

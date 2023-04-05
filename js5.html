@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MY HTML PAGE</title>
+</head>
+<body>
+
+    <div id="d1"></div>
+    <!--<p id="p1"></p>-->
+
+
+    <script>
+
+        //
+        //var a = 10; //global scope
+        //let x = 100; //global scope
+
+        //function F1() {
+        //    var b = 20; //function scope
+        //    var a = 30;
+        //    let x = 200; //function scope
+        //    //var x = 1000; //
+        //    //let a = 300; //
+        //    console.log("a = " + a);
+        //    console.log("x = " + x);
+
+
+
+        //}
+        ////block
+        //{
+        //    var a = 40;//var have global scope in block
+        //    let x = 400; //block scope
+        //}
+
+        //F1();
+        //console.log("a = " + a);
+        //console.log("x = " + x);
+
+        ////console.log("b = " + b);
+
+        //
+
+
+
+        //
+
+        //"use strict"
+        //var a = 10;
+        //console.log(a);
+
+        //
+
+
+        //Arrayy in Javascript
+
+        //var names = ["Amol", "Ajay", "Kishor", "Rahul", "Rohan"];
+        //var no = [10, 20, 30, 40, 50];
+        //var arr = [];
+
+        //arr[0] = 100;
+        //arr[1] = 200;
+        //var data = "<ol>";
+
+        //for (var i = 0; i < names.length; i++) {
+        //    //console.log(names[i]);
+        //    data += "<li>" + names[i] + "</li>";
+
+        //}
+        //data += "</ol>";
+        //console.log(data);
+        //document.getElementById("d1").innerHTML = data;
+        //document.getElementById("p1").innerHTML = "This is sample text in para";
+
+
+        ////value--.input type --> text, no,email......
+        ////innerHTML---> for any html element
+
+        //
+
+
+
+        //
+
+        //var names = ["Amol", "Ajay", "Kishor", "Rahul", "Rohan"];
+
+        //names.push("Suraj");//add at last
+        //names.unshift("Test Name"); // add at the 1st positiom in an array / 0th index
+
+        //names.shift(); // remove the 0th index element
+        //names.pop();  // remove the last  element
+
+        //names.splice(2, 0, "Test1", "Test2"); // insert the elements from 2nd index
+        ////names.splice(3, 1, "Test3", "Test4"); // replace the new elements from the 2nd index
+
+        //var list = names.slice(2, 7);  // <6
+
+        //names.sort();
+        //names.reverse();
+
+
+        //var data = "<ol>";
+
+        //for (var i = 0; i < names.length; i++) {
+        //    //console.log(names[i]);
+        //    data += "<li>" + names[i] + "</li>";
+
+        //}
+        //data += "</ol>";
+        //console.log(data);
+        //document.getElementById("d1").innerHTML = data;
+        //console.log(list);
+
+        //
+
+
+        //
+
+        // filter , map
+        var nos = [56, 34, 33, 77, 89, 22, 67, 44, 99, 10];
+
+        const result = nos.filter(checkEven);
+        const result2 = nos.filter(check);
+        function checkEven(item) {
+            if (item % 2 == 0) {
+                return item;
+            }
+        }
+
+        function check(val) {
+            return val >= 18;
+        }
+
+        console.log(result);
+        console.log(result2);
+
+
+        const result3 = nos.map(testfunc);
+
+        function testfunc(item) {
+            var i = item;
+            return item - (i * 0.02);
+        }
+        console.log(result3);
+
+
+
+        //for (let i = 0; i < nos.length; i++) {
+        //    console.log(nos[i]);
+        //}
+
+        nos.forEach(display);
+
+        function display(item) {
+            console.log(item);
+        }
+
+
+        //
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

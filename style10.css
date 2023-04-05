@@ -1,0 +1,21 @@
+﻿.nav-link {
+    color: #fd680d;
+    font-weight: 500;
+}
+
+    .nav-link:hover {
+        color: green;
+    }
+
+.carousel-inner {
+    height: 252px;
+}
+
+.btn-outline-success {
+    width: 140px;
+    margin-left: 120px;
+}
+
+.form-control {
+    width: 50%;
+}

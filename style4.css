@@ -1,0 +1,19 @@
+﻿div p{
+    background-color:yellow;
+}
+
+div>p{
+    color:red;
+}
+
+div+p {
+    background-color: aquamarine;
+}
+
+div~p{
+    background-color:aquamarine;
+}
+
+#t1 .test{
+
+}

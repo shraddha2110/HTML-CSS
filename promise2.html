@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>My HTML Page</title>
+
+</head>
+<body>
+    <input type="button" value="Get All Data" onclick="getData()" /><br />
+    Enter Id <input type="text" id="t1" />
+    <input type="button" value="Search" onclick="searchData()" />
+    <br />
+
+    <div id="d1"></div>
+    <script>
+        async function getData() {
+            let promise = new Promise(function (resolve, reject) {
+                let req = new XMLHttpRequest();
+                req.open('GET', "https://jsonplaceholder.typicode.com/todos/");
+                req.onload = function () {
+                    // 200 is the http status code -> 200 means receied data/ req is successful
+                    if (req.status == 200) {
+                        resolve(req.response);
+                    }
+                    else {
+                        reject("Error in the application");
+                    }
+                };
+                req.send();
+            });
+
+            let info2 = await promise;
+            displayAll(info2);
+        }
+
+
+        async function searchData() {
+            let promise2 = new Promise(function (resolve, reject) {
+                let id = document.getElementById("t1").value;
+                var url = "https://jsonplaceholder.typicode.com/todos/" + id.toString();
+                console.log(url);
+                let req2 = new XMLHttpRequest();
+                req2.open('GET', url);
+                req2.onload = function () {
+                    // 200 is the http status code -> 200 means receied data/ req is successful
+                    if (req2.status == 200) {
+                        resolve(req2.response);
+                    }
+                    else {
+                        reject("Error in the application");
+                    }
+                };
+                req2.send();
+                    
+
+            });
+            let info = await promise2;
+            display(info);
+        }
+
+
+        var dt = "";
+         dt="<table border='1'><tr><th>User Id</th><th>Id</th><th>Title</th><th>Completed</th></tr>";
+        function display(value)
+        {
+
+            var x = JSON.parse(value);
+            dt += "<tr><td>" + x.userId + "</td><td>" + x.id + "</td><td>" + x.title + "</td><td>" + x.completed
+                + "</td></tr>";
+
+            dt += "</table>";
+            console.log(dt);
+            document.getElementById("d1").innerHTML = dt;
+        }
+
+        var data = "";
+        data = "<table border='1'><tr><th>User Id</th><th>Id</th><th>Title</th><th>Completed</th></tr>";
+        function displayAll(val) {
+            var list = JSON.parse(val);
+            for (var i = 0; i < list.length; i++) {
+                data += "<tr><td>" + list[i].userId + "</td><td>" + list[i].id + "</td><td>" + list[i].title + "</td><td>" + list[i].completed
+                    + "</td></tr>";
+
+            }
+            data += "</table>";
+            document.getElementById("d1").innerHTML = data;
+        }
+
+    </script>
+</body>
+</html>

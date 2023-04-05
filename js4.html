@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p id="p1">
+        This is sample text
+    </p>
+
+    <p>
+        class="test1">
+        This is sample text
+    </p>
+
+    <p>
+        class="test1">
+        This is sample text
+    </p>
+    <input type="button" value="Apply CSS" onclick="applyCss()" />
+
+    <script>
+        function applyCss() {
+            for (var i = 0; i < 3; i++) {
+
+                document.getElementById("p1")[i].style.backgroundColor = "yellow";
+                document.getElementById("p1")[i].style.color = "red";
+                document.getElementById("p1")[i].style.fontsize = "16px";
+
+            }
+
+
+        }
+    </script>
+</body>
+</html>

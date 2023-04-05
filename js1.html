@@ -1,0 +1,41 @@
+﻿<html>
+<body>
+
+<script>
+    var age = 22;
+    var name = "Amol";
+    var per = 77.77;
+    var isActive = true;
+    document.write("Age is " + age);
+    document.write("<br/>name is " + name);
+    document.write("<br/>percentage is " + per);
+
+    for (var i = 1; i <= 10; i++) {
+        document.write("<br/>  " + i);
+
+    }
+    //
+    var result = confirm("do you want delete record  ?");
+    document.write("Result is " + result);
+    if (result == true) {
+        //
+    }
+    else {
+        //
+    }
+
+    //check user have age>18--->print valid else not valid
+    function validate(age) {
+        var ans = "not eigible";
+        if (age >= 18) {
+            ans = "eligible";
+        }
+        document.write("You are <b>" + ans + "</b> for Vote");
+    }
+
+    var age = parseInt(prompt("Enter age"));
+    validate(age);
+
+</script>
+</body>
+</html>
